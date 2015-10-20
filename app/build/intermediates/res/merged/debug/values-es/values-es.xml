@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/shimulchaudhary/AndroidStudioProjects/ch03_TipCalculator1/app/src/main/res/values-es/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">Calculadora de Hipoteca</string>
+    <string name="bank_name">Seleccione Banco</string>
+    <string name="btn_calculate">Calcular</string>
+    <string name="button_schedule">Horario de Pagos</string>
+    <string name="decrease">-</string>
+    <string name="down_payment">Pago Inicial</string>
+    <string name="increase">+</string>
+    <string name="insurance_rate">Tasa de Seguro</string>
+    <string name="interest">Interes</string>
+    <string name="interest_rate">Tasa de Interes</string>
+    <string name="loan_term">Plazo del Prestamo</string>
+    <string name="menu_settings">Ajustes</string>
+    <string name="month">Mes</string>
+    <string name="monthly_payment">Pago Mensual</string>
+    <string name="mortgage_amount">Costo de Hipoteca</string>
+    <string name="payment">Pago</string>
+    <string name="principal">Principal</string>
+    <string name="r_btn_quarterly">15 Años</string>
+    <string name="r_btn_yearly">30 Años</string>
+    <string name="radiobutton_monthly">10 Años</string>
+    <string name="remaining">Hipoteca Restante</string>
+    <string name="tip_amount"/>
+    <string name="tip_percent_label">Porciento</string>
+    <string name="title_activity_table">Tabla de Amortizacion</string>
+    <string name="title_activity_tip_calculator">Calculadora de Hipoteca</string>
+    <string name="total_amount_label">Total</string>
+</resources>

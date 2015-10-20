@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:id="@+id/sView">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/RelativeLayout1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+    <!-- The Mortgage Amount -->
+
+        <TextView
+        android:id="@+id/mortgageAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/mortgage_amount"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editText_MortgageAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/mortgageAmount"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/mortgageAmount"
+        android:ems="8"
+        android:inputType="numberDecimal"
+        android:text="@string/mortgageAmount"
+        android:textSize="18sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <!-- Down Payment -->
+
+    <TextView
+        android:id="@+id/downPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/down_payment"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/mortgageAmount"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+        <!-- Interest Rate -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/interest_rate"
+            android:id="@+id/interestRate"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/downPayment" />
+
+
+        <!-- Select Bank Spinner -->
+
+    <Spinner
+        android:id="@+id/bankName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/interestRate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/loanTerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/loan_term"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/bankName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/loanTerm"
+        android:orientation="vertical"
+        android:id="@+id/rBtnGroup"
+        android:layout_toRightOf="@+id/loanTerm"
+        android:layout_alignRight="@+id/editText_MortgageAmount"
+        android:longClickable="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radiobutton_monthly"
+            android:id="@+id/rBtn_Ten"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/r_btn_quarterly"
+            android:id="@+id/rBtn_Fifteen"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/r_btn_yearly"
+            android:id="@+id/rBtn_Thirty"
+            android:checked="false" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:text="@string/btn_calculate"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:maxHeight="30dp"
+        android:layout_below="@+id/rBtnGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+        <SeekBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sbInterestRate"
+            android:progress="10"
+            android:max="19"
+            android:indeterminate="false"
+            android:layout_toRightOf="@+id/downPayment"
+            android:layout_alignTop="@+id/interestRate"
+            android:layout_alignRight="@+id/btnCalculate"
+            android:layout_alignEnd="@+id/btnCalculate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/monthly_payment"
+            android:id="@+id/monthlyPayment"
+            android:padding="10dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/btnCalculate"
+            android:layout_toStartOf="@+id/editText_MortgageAmount"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/editText_MortgageAmount" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mPayment"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:focusable="false"
+            android:cursorVisible="false"
+            android:longClickable="false"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignTop="@+id/monthlyPayment"
+            android:layout_alignLeft="@+id/editText_MortgageAmount"
+            android:layout_alignRight="@+id/rBtnGroup"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText_downPayment"
+            android:ems="8"
+            android:inputType="numberDecimal"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignTop="@+id/downPayment"
+            android:layout_toRightOf="@+id/mortgageAmount"
+            android:layout_alignRight="@+id/mPayment"
+            android:layout_alignEnd="@+id/mPayment" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_schedule"
+            android:id="@+id/btnSchedule"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/mPayment" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000"
+            android:id="@+id/interestRateTextView"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/sbInterestRate"
+            android:layout_alignRight="@+id/rBtnGroup"
+            android:layout_alignEnd="@+id/rBtnGroup"
+            android:layout_alignTop="@+id/sbInterestRate" />
+
+    </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
